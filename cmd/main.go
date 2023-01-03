@@ -1,8 +1,8 @@
 package main
 
 import (
-	// "gin_gonic_api/pkg/platform/mongo/"
 	"gin_gonic_api/pkg/platform/mongodatabase"
+	"gin_gonic_api/pkg/platform/mysqldatabase"
 	"log"
 
 	"github.com/gin-gonic/gin"
@@ -17,9 +17,7 @@ var (
 func main() {
 
 	usercontroller, ctx := mongodatabase.Init()
-
-	// database
-	// database.Init()
+	postcontroller := mysqldatabase.Init()
 
 	defer mongoclient.Disconnect(ctx)
 
@@ -29,6 +27,8 @@ func main() {
 
 	usercontroller.RegisterUserRoutes(basepath)
 
-	log.Fatal(server.Run(":9090"))
+	postcontroller.RegisterPostRoutes(basepath)
+
+	log.Fatal(server.Run())
 
 }

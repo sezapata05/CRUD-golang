@@ -4,30 +4,38 @@ I will be using this repository to add everything I will be learning in Golang.
 
 Initially it has 4 endpoints which are:
 
-### POST
-##### /v1/user/create
-allows to create a user in the database.
-JSON: 
-{
-    "name" : "user_name",
-    "age" : 26,
-    "address" : {
-        "state" : "Col",
-        "city" : "Med",
-        "pincode" : 5657
-    }
-}
+The repository contains 2 types of functionalities (connections) to databases such as MongoDB and MySQL.
 
-### GET
-#### /v1/user/get
-Allows to consult all existing users in the database.
+Within the endpoints are exposed the groups "user" and "post".
 
-#### /v1/user/get/<<user_name>>
-Allows you to query a specific user in the database.
+which contain the operations:
 
-### PUT
-#### /v1/user/update
-receives a JSON with the same structure as the one in the POST
+## 1 POST
+## 2 GET
+#### * Get all
+#### * Get single
+## 1. PUT
+## 1 DELETE
 
-### DELETE
-#### /v1/user/delete/<<<user_name>>
+
+you can visit and download the official collections that have been used to work in 
+/pgk/doc/Api - go.postman_collection.json
+
+# to run locally you need to create the following files with the following structure:
+## configuration.yml
+```
+Database:
+  type_db: mongodb
+  host: <<your_host>>
+  port: <<your_port>>
+```
+## .env
+```
+PORT=<<gin port app>>
+DB_URL="user:pass@tcp(host_name:3306)/database_name?parseTime=True"
+```
+
+# And run the following command
+```
+go run cmd/main.go
+```

@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"gin_gonic_api/pkg/controllers"
-	"gin_gonic_api/pkg/platform/mongodatabase/configuration"
+	"gin_gonic_api/pkg/platform/configuration"
 	"gin_gonic_api/pkg/services"
 	"log"
 

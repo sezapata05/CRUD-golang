@@ -2,8 +2,11 @@ package configuration
 
 import (
 	"io/ioutil"
+	"log"
 
 	"gopkg.in/yaml.v3"
+
+	"github.com/joho/godotenv"
 )
 
 type DataBase struct {
@@ -30,5 +33,11 @@ func LoadConfig(filename string) (*Configuration, error) {
 	}
 
 	return configdb, nil
+}
 
+func LoadEnvVariables() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 }

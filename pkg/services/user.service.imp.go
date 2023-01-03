@@ -3,7 +3,7 @@ package services
 import (
 	"context"
 	"errors"
-	"gin_gonic_api/models"
+	"gin_gonic_api/pkg/models"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

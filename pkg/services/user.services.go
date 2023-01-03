@@ -1,6 +1,6 @@
 package services
 
-import "gin_gonic_api/models"
+import "gin_gonic_api/pkg/models"
 
 type UserService interface {
 	CreateUser(*models.User) error

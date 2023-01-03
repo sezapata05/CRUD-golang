@@ -1,11 +1,12 @@
-package database
+package mongodatabase
 
 import (
 	"context"
 	"fmt"
-	"gin_gonic_api/configuration"
-	"gin_gonic_api/controllers"
-	"gin_gonic_api/services"
+
+	"gin_gonic_api/pkg/controllers"
+	"gin_gonic_api/pkg/platform/configuration"
+	"gin_gonic_api/pkg/services"
 	"log"
 
 	"go.mongodb.org/mongo-driver/mongo"

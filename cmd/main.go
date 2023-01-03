@@ -1,7 +1,8 @@
 package main
 
 import (
-	"gin_gonic_api/database"
+	// "gin_gonic_api/pkg/platform/mongo/"
+	"gin_gonic_api/pkg/platform/mongodatabase"
 	"log"
 
 	"github.com/gin-gonic/gin"
@@ -15,7 +16,10 @@ var (
 
 func main() {
 
-	usercontroller, ctx := database.Init()
+	usercontroller, ctx := mongodatabase.Init()
+
+	// database
+	// database.Init()
 
 	defer mongoclient.Disconnect(ctx)
 
